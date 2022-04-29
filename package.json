@@ -21,6 +21,6 @@
     "commander": "^9.2.0"
   },
   "bin": {
-    "gendiff": "bin/gendiff"
+    "gendiff": "bin/gendiff.js"
   }
 }
