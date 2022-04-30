@@ -1,10 +1,13 @@
-const { Command } = require('commander'); // (normal include)
-// const { Command } = require('../'); // include commander in git clone of commander repo
+import { Command } from 'commander';
 const program = new Command();
 
 program
   .description('Compares two configuration files and shows a difference.')
   .option('-v, --version', 'output the version number')
-  .option('-h, --help', 'display help for command');
+  .helpOption('-h, --help', 'output usage information')
+  .option('-f, --format <type>', 'output format')
+  .arguments('<filepath1><filepath2>');
 
-program.parse();
+// program.parse();
+
+export default program;
