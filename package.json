@@ -26,5 +26,8 @@
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
   }
 }
