@@ -1,4 +1,4 @@
-import genDiff from './../src/index.js';
+import genDiff from './../src/genDiff.js';
 import { Command } from 'commander';
 const program = new Command();
 
