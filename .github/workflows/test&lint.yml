@@ -1,0 +1,23 @@
+# Name of workflow
+name: test&lint
+
+# Trigger the workflow on push or pull request
+on:
+  - push
+
+jobs:
+  build:
+
+    # The type of machine to run the job on
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        uses: actions/setup-node@v2
+        # The Node.js version to configure
+        with:
+          node-version: '16.x'
+          cache: 'npm'
+      - run: make install
+      - run: make lint
+      - run: make tests
