@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import getDataFromFile from './getDataFromFile';
+import getDataFromFile from './getDataFromFile.js';
 
 export default (filepath1, filepath2) => {
   const JSONdata1 = getDataFromFile(filepath1);
@@ -17,15 +17,15 @@ export default (filepath1, filepath2) => {
       if (data1[key] === data2[key]) {
         result = [...result, `  ${key} : ${data1[key]}`];
       } else {
-      result = [...result, `- ${key} : ${data1[key]}`];
-      result = [...result, `+ ${key} : ${data2[key]}`];
+        result = [...result, `- ${key} : ${data1[key]}`];
+        result = [...result, `+ ${key} : ${data2[key]}`];
       }
     } else if (firstKeys.includes(key) && !secondKeys.includes(key)) {
       result = [...result, `- ${key} : ${data1[key]}`];
     } else if (!firstKeys.includes(key) && secondKeys.includes(key)) {
       result = [...result, `+ ${key} : ${data2[key]}`];
     }
-  };
+  }
   const resultString = `{\n${result.map((line) => `  ${line}`).join('\n')}\n}`;
   console.log(resultString);
   return resultString;
