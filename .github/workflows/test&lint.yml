@@ -13,6 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        name: Somename
         uses: actions/setup-node@v2
         # The Node.js version to configure
         with:
