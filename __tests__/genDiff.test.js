@@ -1,29 +1,43 @@
 import { test, expect } from '@jest/globals';
 import genDiff from '../src/genDiff.js';
-import getDataFromFile from '../src/getDataFromFile.js';
+import parser from '../src/parsers.js';
 
-const filepath1 = '__fixtures__/test1.json';
-const filepath2 = '__fixtures__/test2.json';
-const filepathToResult1 = '__fixtures__/resultMain.txt';
-const filepath3 = '__fixtures__/test3.json';
-const filepathToResult2 = '__fixtures__/resultForSecondTest.txt';
-const filepathToResult3 = '__fixtures__/resultForThirdTest.txt';
-
-test('main', () => {
-  const result = genDiff(filepath1, filepath2);
-  const resultData = getDataFromFile(filepathToResult1);
+test('json main', () => {
+  const result = genDiff('test1.json', 'test2.json');
+  const resultData = parser('resultMain.txt');
   expect(typeof result).toBe('string');
   expect(result).toEqual(resultData);
 });
 
-test('empty files 1', () => {
-  const result = genDiff(filepath1, filepath3);
-  const resultData = getDataFromFile(filepathToResult2);
+test('empty json files 1', () => {
+  const result = genDiff('test1.json', 'test3.json');
+  const resultData = parser('resultForSecondTest.txt');
   expect(result).toEqual(resultData);
 });
 
-test('empty files 2', () => {
-  const result = genDiff(filepath3, filepath1);
-  const resultData = getDataFromFile(filepathToResult3);
+test('empty json files 2', () => {
+  const result = genDiff('test3.json', 'test1.json');
+  const resultData = parser('resultForThirdTest.txt');
+  expect(result).toEqual(resultData);
+});
+
+test('yaml main', () => {
+  const result = genDiff('test1.yml', 'test2.yml');
+  const resultData = parser('resultMain.txt');
+  console.log(result, resultData);
+  expect(result).toEqual(resultData);
+});
+
+test('empty yaml files 1', () => {
+  const result = genDiff('test1.yml', 'test3.yml');
+  const resultData = parser('resultForSecondTest.txt');
+  console.log(result, resultData);
+  expect(result).toEqual(resultData);
+});
+
+test('empty yaml files 2', () => {
+  const result = genDiff('test3.yml', 'test1.yml');
+  const resultData = parser('resultForThirdTest.txt');
+  console.log(result, resultData);
   expect(result).toEqual(resultData);
 });

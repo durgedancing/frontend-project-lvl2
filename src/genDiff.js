@@ -1,17 +1,15 @@
 import _ from 'lodash';
-import getDataFromFile from './getDataFromFile.js';
+import parser from './parsers.js';
 
 export default (filepath1, filepath2) => {
-  const JSONdata1 = getDataFromFile(filepath1);
-  const JSONdata2 = getDataFromFile(filepath2);
-
-  const data1 = JSON.parse(JSONdata1);
-  const data2 = JSON.parse(JSONdata2);
+  const data1 = parser(filepath1);
+  const data2 = parser(filepath2);
 
   const firstKeys = Object.keys(data1);
   const secondKeys = Object.keys(data2);
   const keys = _.uniq([...firstKeys, ...secondKeys]);
   let result = [];
+
   for (const key of _.sortBy(keys)) {
     if (firstKeys.includes(key) && secondKeys.includes(key)) {
       if (data1[key] === data2[key]) {
