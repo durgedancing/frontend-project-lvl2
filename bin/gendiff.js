@@ -1,7 +1,18 @@
 #!/usr/bin/env node
 
-// здесь должен быть вызов из src/cli.js
+import { Command } from 'commander';
+import genDiff from '../src/genDiff.js';
 
-import program from '../src/cli.js';
+const program = new Command();
 
-program.parse();
+program
+  .description('Compares two configuration files and shows a difference.')
+  .option('-v, --version', 'output the version number')
+  .helpOption('-h, --help', 'output usage information')
+  .option('-f, --format <type>', 'output format', 'stylish')
+  .usage('[options] <filepath1> <filepath2>')
+  .arguments('<filepath1> <filepath2>')
+  .action((filepath1, filepath2) => console.log(genDiff(filepath1, filepath2, 'stylish')))
+  .parse();
+
+export default program;
