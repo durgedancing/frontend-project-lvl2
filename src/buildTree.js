@@ -3,7 +3,6 @@ import parser from './parsers.js';
 
 const buildTree = (filepath1, filepath2) => {
   const firstData = parser(filepath1);
-  console.log(firstData);
   const secondData = parser(filepath2);
 
   const iter = (data1, data2) => {
@@ -36,9 +35,11 @@ const buildTree = (filepath1, filepath2) => {
       }
       return value1 === value2 ? { type: 'same', key, value: value1 } : { type: 'different', key, value: [iter(value1, value1), iter(value2, value2)] };
     });
+    // console.log(result);
     return { value: result };
   };
   const tree = iter(firstData, secondData);
+  // console.log(`tree: ${JSON.stringify(tree)}`);
   return tree;
 };
 

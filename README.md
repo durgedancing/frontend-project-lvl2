@@ -10,6 +10,9 @@ https://asciinema.org/a/VwD6zouqt6rv4WHcTf3I6Z6Hf
 Демонстрация шестого шага, сранвение вложенных файлов: 
 https://asciinema.org/a/ybNHGsJYda9mHlPOcvxmouH9s
 
+Демонстрация седьмого файла, плоский формат вывода:
+https://asciinema.org/a/CmCb0Uk4v7AWIOl5r4VJ9nUqi
+
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
