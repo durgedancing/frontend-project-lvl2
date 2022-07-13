@@ -11,7 +11,7 @@ https://asciinema.org/a/VwD6zouqt6rv4WHcTf3I6Z6Hf
 https://asciinema.org/a/ybNHGsJYda9mHlPOcvxmouH9s
 
 Демонстрация седьмого файла, плоский формат вывода:
-https://asciinema.org/a/CmCb0Uk4v7AWIOl5r4VJ9nUqi
+https://asciinema.org/a/BTDXeNwW9jOPOv6NsyGzeABom
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
