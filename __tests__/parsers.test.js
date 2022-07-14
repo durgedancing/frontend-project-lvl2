@@ -3,7 +3,7 @@ import { test, expect } from '@jest/globals';
 import parser from '../src/parsers.js';
 
 test('json', () => {
-  const result = parser('nested1.json');
+  const result = parser('filepath1.json');
   const boolean = _.isObject(result);
   expect(boolean).toBe(true);
   const keys = Object.keys(result);
@@ -13,7 +13,7 @@ test('json', () => {
 });
 
 test('yaml', () => {
-  const result = parser('nested1.yml');
+  const result = parser('filepath1.yml');
   const boolean = _.isObject(result);
   expect(boolean).toBe(true);
   const keys = Object.keys(result);
