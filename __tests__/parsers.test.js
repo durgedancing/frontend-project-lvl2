@@ -8,8 +8,6 @@ test('json', () => {
   expect(boolean).toBe(true);
   const keys = Object.keys(result);
   expect(keys.length).toBe(3);
-  const result0 = parser('emptyJSON.json');
-  expect(Object.keys(result0)).toStrictEqual([]);
 });
 
 test('yaml', () => {
@@ -18,6 +16,4 @@ test('yaml', () => {
   expect(boolean).toBe(true);
   const keys = Object.keys(result);
   expect(keys.length).toBe(3);
-  const result0 = parser('emptyYML.yml');
-  expect(Object.keys(result0)).toStrictEqual([]);
 });

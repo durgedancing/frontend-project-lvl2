@@ -22,15 +22,3 @@ test('main json', () => {
   console.log(`result: ${result}\nexpected: ${resultData}`);
   expect(result).toEqual(resultData);
 });
-
-/* test('second file empty', () => {
-  const result = genDiff('filepath1.json', 'emptyJSON.json');
-  const resultData = parser('secondFileEmptyTest.txt');
-  expect(result).toEqual(resultData);
-});
-
-test('first file empty', () => {
-  const result = genDiff('emptyJSON.json', 'filepath2.json');
-  const resultData = parser('firstFileEmptyTest.txt');
-  expect(result).toEqual(resultData);
-}); */
