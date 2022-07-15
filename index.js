@@ -1,7 +1,7 @@
-import buildTree from './buildTree.js';
-import stylish from '../formatters/stylish.js';
-import plain from '../formatters/plain.js';
-import json from '../formatters/json.js';
+import buildTree from './src/buildTree.js';
+import stylish from './formatters/stylish.js';
+import plain from './formatters/plain.js';
+import json from './formatters/json.js';
 
 const genDiff = (filepath1, filepath2, style = 'stylish') => {
   const tree = buildTree(filepath1, filepath2);
