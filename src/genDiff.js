@@ -4,17 +4,14 @@ import plain from '../formatters/plain.js';
 import json from '../formatters/json.js';
 
 const genDiff = (filepath1, filepath2, style = 'stylish') => {
-  let tree = buildTree(filepath1, filepath2);
+  const tree = buildTree(filepath1, filepath2);
   switch (style) {
     case 'plain':
-      tree = plain(tree);
-      break;
+      return plain(tree);
     case 'stylish':
-      tree = stylish(tree);
-      break;
+      return stylish(tree);
     case 'json':
-      tree = json(tree);
-      break;
+      return json(tree);
     default:
       break;
   }
