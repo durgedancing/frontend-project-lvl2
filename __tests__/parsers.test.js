@@ -11,7 +11,7 @@ test('json', () => {
 });
 
 test('yaml', () => {
-  const result = parser('filepath1.yml');
+  const result = parser('file1.yml');
   const boolean = _.isObject(result);
   expect(boolean).toBe(true);
   const keys = Object.keys(result);

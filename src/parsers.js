@@ -17,6 +17,7 @@ const takeFormat = (name) => {
 export default (filepath) => {
   const format = takeFormat(filepath);
   const currentPath = getFixturePath(filepath);
+  console.log(currentPath);
 
   const data = fs.readFileSync(currentPath, 'utf-8', (err, text) => {
     if (err) {

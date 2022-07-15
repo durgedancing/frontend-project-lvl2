@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import genDiff from '../src/genDiff.js';
+import genDiff from '../index.js';
 import parser from '../src/parsers.js';
 
 test('main (stylish)', () => {
