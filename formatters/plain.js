@@ -36,9 +36,8 @@ export default (object) => {
         case 'deleted':
           return resultString.concat(`'${currentKey}' was removed`);
         default:
-          break;
+          throw new Error('ошибка чтения типа children');
       }
-      return '';
     });
     return result.filter((shit) => shit !== '').join('\n');
   };

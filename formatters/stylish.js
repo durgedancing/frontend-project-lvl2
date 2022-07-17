@@ -12,10 +12,6 @@ export default (data, replacer = '  ', spacesCount = 1) => {
 
     const { value: nestedValue } = currentValue;
 
-    /* if (!_.isObject(value)) {
-      return `${currentValue}`;
-    } */
-
     const resultArray = nestedValue.map((item) => {
       switch (item.type) {
         case 'nested':
@@ -29,9 +25,8 @@ export default (data, replacer = '  ', spacesCount = 1) => {
         case 'deleted':
           return `${replacer.repeat(currentCount)}- ${item.key}: ${iter(item.value, depth + 2)}`;
         default:
-          break;
+          throw new Error('ошибка чтения типа children');
       }
-      return '';
     });
     const stylishData = ['{', ...resultArray, `${end}}`].join('\n');
     return stylishData;

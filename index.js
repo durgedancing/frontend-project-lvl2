@@ -13,10 +13,8 @@ const genDiff = (filepath1, filepath2, style = 'stylish') => {
     case 'json':
       return json(tree);
     default:
-      break;
+      throw new Error('ошибка в чтении стиля');
   }
-  console.log(tree);
-  return tree;
 };
 
 export default genDiff;

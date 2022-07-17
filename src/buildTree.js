@@ -11,7 +11,7 @@ const buildTree = (filepath1, filepath2) => {
     }
 
     if (!_.isObject(data2)) {
-      return `${data2}`;
+      return `${data2}`; // строка не покрытая тестами
     }
 
     const firstKeys = Object.keys(data1);

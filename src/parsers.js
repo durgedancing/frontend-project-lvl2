@@ -21,7 +21,7 @@ export default (filepath) => {
 
   const data = fs.readFileSync(currentPath, 'utf-8', (err, text) => {
     if (err) {
-      console.log('error!');
+      throw new Error('ошибка чтения файла, проверить путь');
     }
     return text;
   });
@@ -32,11 +32,10 @@ export default (filepath) => {
     case 'yml':
       return yaml.load(data);
     case 'yaml':
-      return yaml.load(data);
+      return yaml.load(data); // не покрыто тестами (и не проходит их в итоге)
     case 'txt':
       return data;
     default:
-      break;
+      throw new Error('ошибка парсинга');
   }
-  return '';
 };
