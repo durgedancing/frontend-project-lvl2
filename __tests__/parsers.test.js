@@ -26,5 +26,8 @@ test('yaml/yml', () => {
 test('falsy', () => {
   // parser('test1.json');
   expect(() => parser('test1.json')).toThrow();
+  expect(() => parser('test1.yml')).toThrow();
+  expect(() => parser('test1.yaml')).toThrow();
+  expect(() => parser('test1.txt')).toThrow();
   expect(() => parser('file1.js')).toThrow();
 });
