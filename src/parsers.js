@@ -17,25 +17,22 @@ const takeFormat = (name) => {
 export default (filepath) => {
   const format = takeFormat(filepath);
   const currentPath = getFixturePath(filepath);
-  console.log(currentPath);
 
-  const data = fs.readFileSync(currentPath, 'utf-8', (err, text) => {
-    if (err) {
-      throw new Error('ошибка чтения файла, проверить путь');
+  try {
+    const data = fs.readFileSync(currentPath, 'utf-8');
+    switch (format) {
+      case 'json':
+        return JSON.parse(data);
+      case 'yml':
+        return yaml.load(data);
+      case 'yaml':
+        return yaml.load(data);
+      case 'txt':
+        return data;
+      default:
+        throw new Error('ошибка парсинга');
     }
-    return text;
-  });
-
-  switch (format) {
-    case 'json':
-      return JSON.parse(data);
-    case 'yml':
-      return yaml.load(data);
-    case 'yaml':
-      return yaml.load(data); // не покрыто тестами (и не проходит их в итоге)
-    case 'txt':
-      return data;
-    default:
-      throw new Error('ошибка парсинга');
+  } catch (e) {
+    throw Error('ошибка чтения файла, проверить путь');
   }
 };

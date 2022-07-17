@@ -26,6 +26,5 @@ test('main plain', () => {
 test('main json', () => {
   const result = genDiff('filepath1.json', 'filepath2.json', 'json');
   const resultData = parser('jsonResult.json');
-  console.log(`result: ${result}\nexpected: ${resultData}`);
   expect(result).toEqual(resultData);
 });
