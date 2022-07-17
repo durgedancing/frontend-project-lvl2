@@ -33,6 +33,6 @@ export default (filepath) => {
         throw new Error('ошибка парсинга');
     }
   } catch (e) {
-    throw new Error('ошибка чтения файла, проверить путь');
+    throw new Error(`ошибка чтения файла, проверить путь: ${currentPath}`);
   }
 };
