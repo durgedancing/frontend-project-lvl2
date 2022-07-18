@@ -4,7 +4,7 @@ const stylishValue = (someValue) => {
   if (_.isObject(someValue) || _.isArray(someValue)) {
     return '[complex value]';
   }
-  if (someValue === 'true' || someValue === 'false' || someValue === 'null' || _.isNumber(someValue)) {
+  if (someValue === 'true' || someValue === 'false' || someValue === 'null' || !Number.isNaN(Number(someValue))) {
     return someValue;
   }
   return `'${someValue}'`;
@@ -39,7 +39,7 @@ export default (object) => {
           throw new Error('ошибка чтения типа children');
       }
     });
-    return result.filter((shit) => shit !== '').join('\n');
+    return result.filter((line) => line !== '').join('\n');
   };
   return iter(object, '');
 };
