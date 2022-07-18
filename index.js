@@ -7,7 +7,7 @@ const genDiff = (filepath1, filepath2, style = 'stylish') => {
   const tree = buildTree(filepath1, filepath2);
   switch (style) {
     case 'plain':
-      // console.log(plain(tree));
+      console.log(plain(tree));
       return plain(tree);
     case 'stylish':
       // console.log(stylish(tree));

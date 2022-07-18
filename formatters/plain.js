@@ -4,7 +4,7 @@ const stylishValue = (someValue) => {
   if (_.isObject(someValue) || _.isArray(someValue)) {
     return '[complex value]';
   }
-  if (someValue === 'true' || someValue === 'false' || someValue === 'null') {
+  if (someValue === 'true' || someValue === 'false' || someValue === 'null' || _.isNumber(someValue)) {
     return someValue;
   }
   return `'${someValue}'`;
