@@ -7,7 +7,17 @@ import yaml from 'js-yaml';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const getFixturePath = (filename) => {
+  // console.log(`__dirname: ${__dirname}`);
+  // console.log(`filename: ${filename}`);
+  // const result = path.join(__dirname, '..', '__fixtures__', filename);
+  const result1 = path.resolve(__dirname, '..', '__fixtures__', filename);
+  // console.log(`join: ${result}`);
+  // console.log(`resolve: ${result1}`);
+  return result1;
+};
+// функция не работает на абсолютный путь
+
 const takeFormat = (name) => {
   const extname = path.extname(name);
   const format = extname.slice(1);
