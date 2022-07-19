@@ -4,7 +4,10 @@ const stylishValue = (someValue) => {
   if (_.isObject(someValue) || _.isArray(someValue)) {
     return '[complex value]';
   }
-  if (someValue === 'true' || someValue === 'false' || someValue === 'null' || !Number.isNaN(Number(someValue))) {
+  if (someValue === 'true' || someValue === 'false' || someValue === 'null') {
+    return someValue;
+  }
+  if (!Number.isNaN(Number(someValue)) && someValue !== '') {
     return someValue;
   }
   return `'${someValue}'`;
@@ -20,6 +23,8 @@ export default (object) => {
 
     const result = nestedValue.map((item) => {
       const { type, key, value } = item;
+
+      console.log(`value: ${value}\ntype: ${_.isObject(value)}`);
 
       const currentKey = acc.concat(`${key}`);
       const resultString = 'Property ';
