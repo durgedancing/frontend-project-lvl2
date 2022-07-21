@@ -24,7 +24,7 @@ export default (object) => {
     const result = nestedValue.map((item) => {
       const { type, key, value } = item;
 
-      console.log(`value: ${value}\ntype: ${_.isObject(value)}`);
+      // console.log(`value: ${value}\ntype: ${_.isObject(value)}`);
 
       const currentKey = acc.concat(`${key}`);
       const resultString = 'Property ';
